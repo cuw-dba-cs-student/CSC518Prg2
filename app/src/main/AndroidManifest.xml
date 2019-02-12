@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddLoyaltyPgr"></activity>
-        <activity android:name=".AddCreditCard" />
+        <activity android:name=".AddLoyaltyPrg"></activity>
+        <activity android:name=".AddCCActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

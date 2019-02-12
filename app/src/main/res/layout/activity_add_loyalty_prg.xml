@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddCCActivity">
+    tools:context=".AddLoyaltyPrg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,44 +12,34 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/addCCBtn"
+            android:id="@+id/addLoyaltyButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onAddCCBtnPressed"
             android:text="Submit" />
 
         <EditText
-            android:id="@+id/cardNameText"
+            android:id="@+id/programNameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="Loyalt Program Name" />
 
         <EditText
-            android:id="@+id/ccStartDate"
+            android:id="@+id/bankText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:focusableInTouchMode="false"
-            android:hint="Start Date"
-            android:inputType="date" />
+            android:inputType="textPersonName"
+            android:text="Bank Affiliation" />
 
         <EditText
-            android:id="@+id/minSpendText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:text="Bonus Minimum Spend Requirement" />
-
-        <EditText
-            android:id="@+id/rewardPointsText"
+            android:id="@+id/curPrgBalText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="Reward Points" />
-
+            android:text="Current Balance" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

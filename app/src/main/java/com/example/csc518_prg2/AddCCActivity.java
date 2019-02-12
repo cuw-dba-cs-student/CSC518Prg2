@@ -6,16 +6,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
-public class AddCreditCard extends AppCompatActivity {
+public class AddCCActivity extends AppCompatActivity {
 
-    //private static final String TAG = "AddCreditCard";
+    //private static final String TAG = "AddCCActivity";
 
     private TextView cCardStartDate;
     private DatePickerDialog.OnDateSetListener cCardStartDateSetLstnr;
+    private EditText cardNameText, minSpendText, rewardPointsText;
+
 
 
     @Override
@@ -32,7 +37,7 @@ public class AddCreditCard extends AppCompatActivity {
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
                 int day  = cal.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog dpDiag = new DatePickerDialog(AddCreditCard.this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT,cCardStartDateSetLstnr,year,month,day);
+                DatePickerDialog dpDiag = new DatePickerDialog(AddCCActivity.this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT,cCardStartDateSetLstnr,year,month,day);
                 dpDiag.show();
             }
         });
@@ -45,7 +50,28 @@ public class AddCreditCard extends AppCompatActivity {
                 cCardStartDate.setText(start_date);
             }
         };
+
+        this.cardNameText = (EditText)this.findViewById(R.id.cardNameText);
+        this.minSpendText = (EditText)this.findViewById(R.id.minSpendText);
+        this.rewardPointsText = (EditText)this.findViewById(R.id.rewardPointsText);
     }
+
+    public void onAddCCBtnPressed (View v) {
+        try {
+            String cardName = this.cardNameText.getText().toString();
+            Date startDate = new SimpleDateFormat("MM/dd/yyyy").parse(this.cCardStartDate.getText().toString());
+            int minSpend = Integer.parseInt(this.minSpendText.getText().toString());
+            int rewardPoints = Integer.parseInt(this.rewardPointsText.getText().toString());
+
+            CreditCard c = new CreditCard(cardName, startDate, minSpend, rewardPoints);
+            c.display();
+        }
+        catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
 
 }

@@ -17,7 +17,10 @@ public class CreditCard {
         this.startDate    = startdate_in;
         this.minSpend     = minspend_in;
         this.rewardPoints = rewardpoints_in;
-        System.out.println(this);
+    }
+
+    public void display() {
+        System.out.println(this.cardName + " " + this.startDate + " " + this.minSpend + " " + this.rewardPoints);
     }
 
 

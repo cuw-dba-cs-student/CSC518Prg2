@@ -14,12 +14,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAddCCBtnPress( View v) {
-        Intent i = new Intent(this, AddCreditCard.class);
+        Intent i = new Intent(this, AddCCActivity.class);
         this.startActivity(i);
     }
 
     public void onAddLylPgrBtnPress(View v) {
-        Intent i = new Intent(this, AddLoyaltyPgr.class);
+        Intent i = new Intent(this, AddLoyaltyPrg.class);
         this.startActivity(i);
     }
 }
