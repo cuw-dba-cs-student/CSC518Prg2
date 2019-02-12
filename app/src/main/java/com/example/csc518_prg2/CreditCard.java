@@ -10,12 +10,14 @@ public class CreditCard {
     private int rewardPoints;
 
     //Per the google sytle guide https://google.github.io/styleguide/javaguide.html#s5.2.5-non-constant-field-names
-    //my blatant disregard of camel case in java code is pure heresy.
-    public CreditCard (String p_card_name_in, Date p_start_date_in, int p_min_spend_in, int p_reward_points_in) {
-        this.cardName     = p_card_name_in;
-        this.startDate    = p_start_date_in;
-        this.minSpend     = p_min_spend_in;
-        this.rewardPoints = p_reward_points_in;
+    //my blatant disregard of camel case in java code is pure heresy. See https://community.oracle.com/docs/DOC-1007838
+    //for the evil guidelines I have been corrupted with from PL/SQL.
+    public CreditCard (String cardname_in, Date startdate_in, int minspend_in, int rewardpoints_in) {
+        this.cardName     = cardname_in;
+        this.startDate    = startdate_in;
+        this.minSpend     = minspend_in;
+        this.rewardPoints = rewardpoints_in;
+        System.out.println(this);
     }
 
 
