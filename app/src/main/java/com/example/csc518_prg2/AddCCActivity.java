@@ -46,7 +46,7 @@ public class AddCCActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 //
-                String start_date = String.format("Start date: %d/%d/%d", month+1, dayOfMonth, year);
+                String start_date = String.format("%d/%d/%d", month+1, dayOfMonth, year);
                 cCardStartDate.setText(start_date);
             }
         };
