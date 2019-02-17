@@ -46,7 +46,7 @@ public class AddCCActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 //
-                String start_date = String.format("Start date: %d/%d/%d", month+1, dayOfMonth, year);
+                String start_date = String.format("%d/%d/%d", month+1, dayOfMonth, year);
                 cCardStartDate.setText(start_date);
             }
         };
@@ -57,18 +57,22 @@ public class AddCCActivity extends AppCompatActivity {
     }
 
     public void onAddCCBtnPressed (View v) {
-        try {
-            String cardName = this.cardNameText.getText().toString();
-            Date startDate = new SimpleDateFormat("MM/dd/yyyy").parse(this.cCardStartDate.getText().toString());
-            int minSpend = Integer.parseInt(this.minSpendText.getText().toString());
-            int rewardPoints = Integer.parseInt(this.rewardPointsText.getText().toString());
 
+        Date startDate;
+        String cardName = this.cardNameText.getText().toString();
+        int minSpend = Integer.parseInt(this.minSpendText.getText().toString());
+        int rewardPoints = Integer.parseInt(this.rewardPointsText.getText().toString());
+
+        try {
+            startDate = new SimpleDateFormat("MM/dd/yyyy").parse(this.cCardStartDate.getText().toString());
             CreditCard c = new CreditCard(cardName, startDate, minSpend, rewardPoints);
             c.display();
         }
         catch (java.text.ParseException e) {
             e.printStackTrace();
         }
+
+
 
     }
 

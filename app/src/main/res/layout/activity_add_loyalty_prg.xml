@@ -15,7 +15,7 @@
             android:id="@+id/addLoyaltyButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onAddCCBtnPressed"
+            android:onClick="onAddLoyaltyButtonPressed"
             android:text="Submit" />
 
         <EditText
@@ -23,23 +23,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Loyalt Program Name" />
+            android:hint="Loyalt Program Name"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/bankText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Bank Affiliation" />
+            android:hint="Bank Affiliation"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/curPrgBalText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
-            android:text="Current Balance" />
+            android:hint="Current Balance"
+            android:inputType="number" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

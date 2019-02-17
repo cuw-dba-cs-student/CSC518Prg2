@@ -23,8 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Name"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/ccStartDate"
@@ -40,16 +40,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
-            android:text="Bonus Minimum Spend Requirement" />
+            android:hint="Bonus Minimum Spend Requirement"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/rewardPointsText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
-            android:text="Reward Points" />
+            android:hint="Reward Points"
+            android:inputType="number" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

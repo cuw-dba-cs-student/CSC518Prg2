@@ -16,15 +16,19 @@ public class AddLoyaltyPrg extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_loyalty_prg);
+
+        this.programNameText = (EditText)this.findViewById(R.id.programNameText);
+        this.bankText = (EditText)this.findViewById(R.id.bankText);
+        this.curPrgBalText = (EditText)this.findViewById(R.id.curPrgBalText);
     }
 
-    public void onAddLoyaltyButton(View v) {
+    public void onAddLoyaltyButtonPressed(View v) {
+        System.out.println("onAddLoyaltyButton called");
         String programName = this.programNameText.getText().toString();
         String bankAfiliation = this.bankText.getText().toString();
         int currentBalance = Integer.parseInt(this.curPrgBalText.getText().toString());
 
         LoyaltyProgram l = new LoyaltyProgram(programName,bankAfiliation,currentBalance);
-
         l.display();
     }
 }
