@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -71,10 +73,16 @@ public class AddCCActivity extends AppCompatActivity {
             Core.currCreditCard = cc;
             Core.theCreditCards[Core.numCreditCards] = cc;
             Core.theCreditCardStrings[Core.numCreditCards] = cc.toString();
+
+            if(Core.numCreditCards == 0 ){
+                Core.creditCardListView.setAdapter(Core.creditCardListAdapter);
+                Core.creditCardListView = (ListView) this.findViewById(R.id.cCardListView);
+                Core.creditCardListAdapter = new ArrayAdapter(this, R.layout.credit_card_list_row, Core.theCreditCardStrings);
+            }
+
             Core.numCreditCards++;
 
-            Intent i = new Intent(this, MainActivity.class);
-            this.startActivity(i);
+            Core.creditCardListAdapter.notifyDataSetChanged();
 
         }
         catch (java.text.ParseException e) {

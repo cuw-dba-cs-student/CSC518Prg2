@@ -14,11 +14,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView cCardListView;
-    private ArrayAdapter<String> cCardListAdapter;
-
-    private ListView lylPrgListView;
-    private ArrayAdapter<String> lylPrgListAdapter;
 
 
 
@@ -27,21 +22,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        System.out.println("Credit Cards = " + Core.numCreditCards);
-
-        if( Core.numCreditCards > 0) {
-            this.cCardListView = (ListView)this.findViewById(R.id.cCardListView);
-            this.cCardListAdapter = new ArrayAdapter(this,R.layout.credit_card_list_row,Core.theCreditCardStrings);
-            this.cCardListView.setAdapter(this.cCardListAdapter);
+        // Wire up the Singleton to the Credit Card list view
+        System.out.println("numCreditCards = " + Core.numCreditCards);
+        if(Core.numCreditCards == 0) {
+            System.out.println("in the numCreditCards IF block");
+            //Core.creditCardListView = (ListView) this.findViewById(R.id.cCardListView);
+            //Core.creditCardListAdapter = new ArrayAdapter(this, R.layout.credit_card_list_row, Core.theCreditCardStrings);
         }
+        //Core.creditCardListView.setAdapter(Core.creditCardListAdapter);
 
-        if( Core.numLoyaltyPrograms > 0) {
-            this.lylPrgListView = (ListView)this.findViewById(R.id.lylPrgListView);
-            this.lylPrgListAdapter = new ArrayAdapter(this,R.layout.credit_card_list_row,Core.theLoyaltyProgramStrings);
-            this.lylPrgListView.setAdapter(this.lylPrgListAdapter);
+        // Wire up the Singleton to the Loyalty Program list view
+        System.out.println("numLoyaltyPrograms = " + Core.numLoyaltyPrograms);
+        if(Core.numLoyaltyPrograms ==0 ) {
+            System.out.println("in the numLoyaltyPrograms IF block");
+            //Core.loyaltyProgramListView = (ListView)this.findViewById(R.id.lylPrgListView);
+            //Core.loyaltyProgramListAdapter = new ArrayAdapter<>(this,R.layout.loyalt_program_list_row, Core.theLoyaltyProgramStrings);
+            //Core.loyaltyProgramListView.setAdapter(Core.loyaltyProgramListAdapter);
         }
-
-
 
     }
 
