@@ -2,6 +2,7 @@ package com.example.csc518_prg2;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -70,8 +71,10 @@ public class AddCCActivity extends AppCompatActivity {
             Core.currCreditCard = cc;
             Core.theCreditCards[Core.numCreditCards] = cc;
             Core.theCreditCardStrings[Core.numCreditCards] = cc.toString();
-            Core.numCreditCards = Core.numCreditCards++;
-            System.out.println(Core.numCreditCards);
+            Core.numCreditCards++;
+
+            Intent i = new Intent(this, MainActivity.class);
+            this.startActivity(i);
 
         }
         catch (java.text.ParseException e) {

@@ -28,7 +28,11 @@ public class AddLylPrgActivity extends AppCompatActivity {
         String bankAfiliation = this.bankText.getText().toString();
         int currentBalance = Integer.parseInt(this.curPrgBalText.getText().toString());
 
-        LoyaltyProgram l = new LoyaltyProgram(programName,bankAfiliation,currentBalance);
-        l.display();
+        LoyaltyProgram lp = new LoyaltyProgram(programName,bankAfiliation,currentBalance);
+        lp.display();
+        Core.currLoyaltyProgram = lp;
+        Core.theLoyaltyPrograms[Core.numLoyaltyPrograms] = lp;
+        Core.theLoyaltyProgramStrings[Core.numLoyaltyPrograms] = lp.toString();
+        Core.numLoyaltyPrograms++;
     }
 }

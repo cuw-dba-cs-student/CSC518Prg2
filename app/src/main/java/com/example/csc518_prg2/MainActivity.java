@@ -4,19 +4,22 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ListView;
 
 import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ExpandableListView expandableListView;
-    private ExpandableListAdapter expandableListAdapter;
+    private ListView cCardListView;
+    private ArrayAdapter<String> cCardListAdapter;
 
-    List<String> expandableListTitle;
-    HashMap<String, List<String>>  expandableListDetail;
+    private ListView lylPrgListView;
+    private ArrayAdapter<String> lylPrgListAdapter;
+
 
 
     @Override
@@ -24,12 +27,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] list1 = {"Foo","Bar","Baz"};
-        String list1Title = "US Metasyntatic Variables";
-        String[] list2 = {"Wibble", "Wobble","Wubble", "Flob"};
-        String list2Title = "UK Metasyntantic Variables";
+        System.out.println("Credit Cards = " + Core.numCreditCards);
 
-        expandableListView = (ExpandableListView) findViewById(R.id.cCardAndLylPrgExpndLstVw);
+        if( Core.numCreditCards > 0) {
+            this.cCardListView = (ListView)this.findViewById(R.id.cCardListView);
+            this.cCardListAdapter = new ArrayAdapter(this,R.layout.credit_card_list_row,Core.theCreditCardStrings);
+            this.cCardListView.setAdapter(this.cCardListAdapter);
+        }
+
+        if( Core.numLoyaltyPrograms > 0) {
+            this.lylPrgListView = (ListView)this.findViewById(R.id.lylPrgListView);
+            this.lylPrgListAdapter = new ArrayAdapter(this,R.layout.credit_card_list_row,Core.theLoyaltyProgramStrings);
+            this.lylPrgListView.setAdapter(this.lylPrgListAdapter);
+        }
 
 
 

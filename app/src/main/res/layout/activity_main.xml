@@ -27,16 +27,30 @@
             android:text="Loyalty Programs +"
             android:textStyle="bold" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <ExpandableListView
-                android:id="@+id/cCardAndLylPrgExpndLstVw"
+            <ListView
+                android:id="@+id/cCardListView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></ExpandableListView>
+                android:layout_height="match_parent" />
 
-        </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lylPrgListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
