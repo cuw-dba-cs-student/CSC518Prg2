@@ -23,6 +23,9 @@ public class CreditCard {
         System.out.println(this.cardName + " " + this.startDate + " " + this.minSpend + " " + this.rewardPoints);
     }
 
+    public String toString() {
+        return this.cardName + " " + this.startDate + " " + this.minSpend + " " + this.rewardPoints;
+    }
 
 }
 

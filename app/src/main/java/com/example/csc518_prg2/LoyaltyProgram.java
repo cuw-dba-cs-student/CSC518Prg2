@@ -18,4 +18,8 @@ public class LoyaltyProgram {
     public void display() {
         System.out.println(this.programName + " " + this.bankAfiliation + " " + this.currentBalance);
     }
+
+    public String toString() {
+        return this.programName + " " + this.bankAfiliation + " " + this.currentBalance;
+    }
 }

@@ -65,8 +65,14 @@ public class AddCCActivity extends AppCompatActivity {
 
         try {
             startDate = new SimpleDateFormat("MM/dd/yyyy").parse(this.cCardStartDate.getText().toString());
-            CreditCard c = new CreditCard(cardName, startDate, minSpend, rewardPoints);
-            c.display();
+            CreditCard cc = new CreditCard(cardName, startDate, minSpend, rewardPoints);
+            cc.display();
+            Core.currCreditCard = cc;
+            Core.theCreditCards[Core.numCreditCards] = cc;
+            Core.theCreditCardStrings[Core.numCreditCards] = cc.toString();
+            Core.numCreditCards = Core.numCreditCards++;
+            System.out.println(Core.numCreditCards);
+
         }
         catch (java.text.ParseException e) {
             e.printStackTrace();

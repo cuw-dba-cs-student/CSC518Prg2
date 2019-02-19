@@ -8,7 +8,7 @@ import android.widget.EditText;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class AddLoyaltyPrg extends AppCompatActivity {
+public class AddLylPrgActivity extends AppCompatActivity {
 
     EditText programNameText, bankText, curPrgBalText;
 

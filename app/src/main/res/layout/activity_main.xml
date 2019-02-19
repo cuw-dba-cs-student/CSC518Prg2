@@ -26,5 +26,17 @@
             android:onClick="onAddLylPgrBtnPress"
             android:text="Loyalty Programs +"
             android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ExpandableListView
+                android:id="@+id/cCardAndLylPrgExpndLstVw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ExpandableListView>
+
+        </RelativeLayout>
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
